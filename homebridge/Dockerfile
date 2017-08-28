@@ -29,7 +29,7 @@ RUN apk add --no-cache jq git python make g++ libffi-dev openssl-dev dbus \
       homebridge-config-ui \
       homebridge-broadlink-rm \
       homebridge-laser-egg \
-      homebridge-mi-air-purifier \
+      edwinldy/homebridge-mi-air-purifier \
       miio &&\
     chmod a+x /run.sh
 
