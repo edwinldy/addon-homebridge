@@ -6,7 +6,35 @@
     "pin": "%%PIN%%"
   },
   "description": "Homebridge for Home Assistant",
-  "accessories": [],
+  "accessories": [
+    {
+      "accessory": "MiAirPurifier",
+      "name": "Air-Purifier-1",
+      "id": "123...",
+      "showTemperature": true,
+      "showHumidity": true,
+      "showAirQuality": false
+    },
+    {
+      "accessory": "MiAirPurifier",
+      "name": "Air-Purifier-2",
+      "id": "456...",
+      "showTemperature": true,
+      "showHumidity": true,
+      "showAirQuality": false
+    },
+    {
+      "accessory":"laser-egg",
+      "name":"laseregg",
+      "laser_egg_id":"123...",
+      "polling":"5"
+    },
+    {
+      "accessory": "SonoffBasicESPEasy",
+      "name": "switch1",
+      "ip": "192.168.xx.xx"
+    }
+  ],
   "platforms": [
     {
       "platform": "HomeAssistant",
@@ -30,6 +58,43 @@
         "switch"
       ],
       "logging": true
+    },
+    {
+      "platform": "config",
+      "name": "Config",
+      "port": 8880,
+      "log": "/var/log/homebridge.stdout.log",
+      "error_log": "/var/log/homebridge.stderr.log",
+      "restart": "sudo systemctl restart homebridge.service"
+    },
+    {
+      "platform":"BroadlinkRM",
+      "name":"Broadlink RM",
+      "hideScanFrequencyButton": false,
+      "hideLearnButton": false,
+      "accessories":[
+        {
+          "name":"Light",
+          "type":"light",
+          "defaultBrightness": 70,
+          "useLastKnownBrightness": true,
+          "disableAutomaticOff": false,
+          "onDuration": 5,
+          "data":{
+            "off":"2600500000012...",
+            "brightness10": "2600500000012...",
+            "brightness20": "2600500000012...",
+            "brightness30": "2600500000012...",
+            "brightness40": "2600500000012...",
+            "brightness50": "2600500000012...",
+            "brightness60": "2600500000012...",
+            "brightness70": "2600500000012...",
+            "brightness80": "2600500000012...",
+            "brightness90": "2600500000012...",
+            "brightness100": "2600500000012..."
+          }
+        }
+      ]
     }
   ]
 }
