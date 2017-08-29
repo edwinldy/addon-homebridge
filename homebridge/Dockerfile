@@ -27,7 +27,7 @@ RUN apk add --no-cache jq git python make g++ libffi-dev openssl-dev dbus \
       request \
       homebridge-sonoff-basic-espeasy \
       homebridge-config-ui \
-      homebridge-broadlink-rm \
+      edwinldy/homebridge-broadlink-rm \
       homebridge-laser-egg \
       edwinldy/homebridge-mi-air-purifier \
       miio &&\
